@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Matemática - 4º Ano Fundamental (Parcial B2 - Estilo Prova)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: auto;
+        }
+        h1, h2 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header-info {
+            font-size: 0.9em;
+            text-align: right;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .question-section {
+            margin-bottom: 30px;
+            border-bottom: 1px dashed #ccc; /* Linha tracejada como na prova */
+            padding-bottom: 20px;
+        }
+        .question-section:last-child {
+            border-bottom: none;
+        }
+        .question {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+        .question p {
+            margin: 5px 0;
+        }
+        .question img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px auto; /* Mais espaço para imagens */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .question input[type="text"], .question input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            display: block;
+            margin: 20px auto 0;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        .feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .feedback.correct { background-color: #d4edda; color: #155724; border-color: #c3e6cb; }
+        .feedback.incorrect { background-color: #f8d7da; color: #721c24; border-color: #f5c6cb; }
+        .feedback.empty { background-color: #fff3cd; color: #856404; border-color: #ffeeba; }
+        .feedback p { margin: 0; }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .sub-question {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+    </style>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="https://via.placeholder.com/100x50?text=LOGO+MARISTA" alt="Logo Colégio Marista de Brasília" style="max-width: 100px; display: inline-block; vertical-align: middle; margin-right: 10px;">
+            <h1 style="display: inline-block; vertical-align: middle;">COLÉGIO MARISTA DE BRASÍLIA</h1>
+        </div>
+        <div class="header-info">
+            <p>Educação Infantil e Ensino Fundamental</p>
+            <p>MATEMÁTICA - 4.º ANO</p>
+            <p>Professor(a): ___________________</p>
+            <p>Componente Curricular: MATEMÁTICA</p>
+            <p>Data: ___ / ___ / ___</p>
+        </div>
+
+        <h2 style="text-align: center; margin-top: 30px;">RETOMADA DE CONTEÚDO</h2>
+
+        <div class="question-section">
+            <p><strong>1) Os alunos de uma escola fizeram uma votação para saber o gênero literário preferido da turma. Observe o gráfico abaixo.</strong></p>
+            <img src="https://via.placeholder.com/600x300?text=GRÁFICO+GÊNERO+LITERÁRIO" alt="Gráfico de Gênero Literário Preferido">
+            <div class="sub-question">
+                <p>A) Qual o gênero literário mais votado?</p>
+                <label for="q1a">Resposta:</label>
+                <input type="text" id="q1a" name="q1a">
+                <div id="feedback1a" class="feedback"></div>
+            </div>
+            <div class="sub-question">
+                <p>B) Qual o gênero literário menos votado?</p>
+                <label for="q1b">Resposta:</label>
+                <input type="text" id="q1b" name="q1b">
+                <div id="feedback1b" class="feedback"></div>
+            </div>
+            <div class="sub-question">
+                <p>C) Qual a diferença entre o gênero literário mais votado e o menos votado?</p>
+                <label for="q1c">Cálculo:</label>
+                <input type="text" id="q1c_calc" name="q1c_calc" placeholder="Escreva seu cálculo aqui (opcional)">
+                <label for="q1c">Resposta:</label>
+                <input type="number" id="q1c" name="q1c">
+                <div id="feedback1c" class="feedback"></div>
+            </div>
+            <div class="sub-question">
+                <p>D) Quantos alunos participaram dessa pesquisa?</p>
+                <label for="q1d">Cálculo:</label>
+                <input type="text" id="q1d_calc" name="q1d_calc" placeholder="Escreva seu cálculo aqui (opcional)">
+                <label for="q1d">Resposta:</label>
+                <input type="number" id="q1d" name="q1d">
+                <div id="feedback1d" class="feedback"></div>
+            </div>
+        </div>
+
+        <div class="question-section">
+            <p><strong>2) Veja, nesta malha quadriculada, a proposta de forma e tamanho de 2 canteiros que serão construídos no condomínio em que Paulo mora.</strong></p>
+            <img src="https://via.placeholder.com/600x300?text=CANTEIROS+NA+MALHA" alt="Malha Quadriculada com Canteiros">
+            <div class="sub-question">
+                <p>A) Se a unidade de medida de área é representada por um quadradinho, qual a área de cada canteiro?</p>
+                <p>Canteiro 1:</p>
+                <label for="q2a_c1">Resposta:</label>
+                <input type="number" id="q2a_c1" name="q2a_c1">
+                <div id="feedback2a_c1" class="feedback"></div>
+                <p>Canteiro 2:</p>
+                <label for="q2a_c2">Resposta:</label
