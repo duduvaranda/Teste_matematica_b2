@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste de Matemática - 4º Ano Fundamental (Parcial B2 - Novo)</title>
+    <title>Teste de Matemática - 4º Ano Fundamental (Parcial B2 - Para Desenhar)</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -47,21 +47,34 @@
         .question p {
             margin: 5px 0;
         }
-        .question img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+        /* Estilo para o espaço de desenho */
+        .drawing-space {
+            width: 100%;
+            height: 250px; /* Altura generosa para o desenho */
+            border: 1px dashed #999;
+            background-color: #f9f9f9;
             margin: 15px auto;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
         }
-        .question input[type="text"], .question input[type="number"] {
+        .question input[type="text"], .question input[type="number"],
+        .question textarea { /* Estilo para textarea (cálculos) */
             width: calc(100% - 20px);
             padding: 8px;
             margin-top: 5px;
             border: 1px solid #ddd;
             border-radius: 4px;
             box-sizing: border-box;
+        }
+        .question textarea {
+            min-height: 100px; /* Altura grande para cálculos */
+            resize: vertical; /* Permite redimensionar verticalmente */
         }
         .submit-btn {
             background-color: #28a745;
@@ -99,13 +112,13 @@
         }
     </style>
     <script type="text/javascript" id="MathJax-script" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </script>
 </head>
 <body>
     <div class="container">
         <div style="text-align: center; margin-bottom: 20px;">
-            <img src="https://via.placeholder.com/100x50?text=LOGO+MARISTA" alt="Logo Colégio Marista de Brasília" style="max-width: 100px; display: inline-block; vertical-align: middle; margin-right: 10px;">
+<img src="https://via.placeholder.com/100x50?text=LOGO+MARISTA" alt="Logo Colégio Marista de Brasília" style="max-width: 100px; display: inline-block; vertical-align: middle; margin-right: 10px;">
             <h1 style="display: inline-block; vertical-align: middle;">COLÉGIO MARISTA DE BRASÍLIA</h1>
         </div>
         <div class="header-info">
@@ -115,13 +128,16 @@
             <p>Componente Curricular: MATEMÁTICA</p>
             <p>Data: ___ / ___ / ___</p>
         </div>
-
+ 
         <h2 style="text-align: center; margin-top: 30px;">RETOMADA DE CONTEÚDO</h2>
-
+ 
         <form id="mathQuizB2New">
             <div class="question-section">
-                <p><strong>1) Os alunos do 4º ano votaram nos seus esportes favoritos. Observe o gráfico de barras e responda.</strong></p>
-                <img src="1750597789357.jpg" alt="Gráfico Esportes Favoritos">
+                <p><strong>1) Os alunos do 4º ano votaram nos seus esportes favoritos. Com base nos dados abaixo, desenhe um gráfico de barras no espaço indicado e depois responda.</strong></p>
+                <p>Dados: Futebol: 15 votos, Basquete: 10 votos, Natação: 8 votos, Vôlei: 12 votos.</p>
+                <div class="drawing-space">
+                    Espaço para desenhar o Gráfico de Barras: Esportes Favoritos
+                </div>
                 <div class="sub-question">
                     <p>A) Qual o esporte mais votado?</p>
                     <label for="q1a">Resposta:</label>
@@ -130,232 +146,99 @@
                 </div>
                 <div class="sub-question">
                     <p>B) Quantos votos a natação recebeu a menos que o futebol?</p>
-                    <label for="q1b">Cálculo:</label>
-                    <input type="text" id="q1b_calc" name="q1b_calc" placeholder="Escreva seu cálculo aqui (opcional)">
+                    <label for="q1b_calc">Cálculo:</label>
+                    <textarea id="q1b_calc" name="q1b_calc" placeholder="Escreva seu cálculo aqui"></textarea>
                     <label for="q1b">Resposta:</label>
                     <input type="number" id="q1b" name="q1b">
                     <div id="feedback1b" class="feedback"></div>
                 </div>
                 <div class="sub-question">
                     <p>C) Quantos alunos participaram dessa votação no total?</p>
-                    <label for="q1c">Cálculo:</label>
-                    <input type="text" id="q1c_calc" name="q1c_calc" placeholder="Escreva seu cálculo aqui (opcional)">
+                    <label for="q1c_calc">Cálculo:</label>
+                    <textarea id="q1c_calc" name="q1c_calc" placeholder="Escreva seu cálculo aqui"></textarea>
                     <label for="q1c">Resposta:</label>
                     <input type="number" id="q1c" name="q1c">
                     <div id="feedback1c" class="feedback"></div>
                 </div>
             </div>
-
+ 
             <div class="question-section">
-                <p><strong>2) Uma sala de aula foi planejada com azulejos quadrados. Veja o desenho abaixo, onde cada quadradinho representa um azulejo.</strong></p>
-                <img src="https://via.placeholder.com/500x300?text=SALA+DE+AULA+MALHA" alt="Sala de Aula em Malha Quadriculada">
-                <div class="sub-question">
-                    <p>A) Qual a área total dessa sala de aula em quadradinhos de azulejo?</p>
-                    <label for="q2a">Resposta:</label>
-                    <input type="number" id="q2a" name="q2a">
-                    <div id="feedback2a" class="feedback"></div>
+                <p><strong>2) Uma horta comunitária será dividida em canteiros na malha quadriculada. Desenhe os canteiros conforme as descrições e depois calcule suas áreas.</strong></p>
+                <p>Canteiro 1: Desenhe um retângulo de 5 unidades de largura por 4 unidades de altura.</p>
+                <p>Canteiro 2: Desenhe uma forma de 'L' composta por 10 quadradinhos (ex: um quadrado 4x4 com 6 quadradinhos de um canto removidos).</p>
+                <div class="drawing-space">
+                    Espaço para desenhar os Canteiros na Malha Quadriculada
                 </div>
                 <div class="sub-question">
-                    <p>B) Se cada azulejo mede 10 cm de lado, qual seria a área real de um azulejo em cm²?</p>
+                    <p>A) Se a unidade de medida de área é um quadradinho, qual a área de cada canteiro?</p>
+                    <p>Canteiro 1:</p>
+                    <label for="q2a_c1">Resposta:</label>
+                    <input type="number" id="q2a_c1" name="q2a_c1">
+                    <div id="feedback2a_c1" class="feedback"></div>
+                    <p>Canteiro 2:</p>
+                    <label for="q2a_c2">Resposta:</label>
+                    <input type="number" id="q2a_c2" name="q2a_c2">
+                    <div id="feedback2a_c2" class="feedback"></div>
+                </div>
+                <div class="sub-question">
+                    <p>B) Qual o perímetro do Canteiro 1?</p>
+                    <label for="q2b_calc">Cálculo:</label>
+                    <textarea id="q2b_calc" name="q2b_calc" placeholder="Escreva seu cálculo aqui"></textarea>
                     <label for="q2b">Resposta:</label>
-                    <input type="number" id="q2b" name="q2b"> cm²
+                    <input type="number" id="q2b" name="q2b">
                     <div id="feedback2b" class="feedback"></div>
                 </div>
             </div>
-
+ 
             <div class="question-section">
-                <p><strong>3) Observe as figuras geométricas planas desenhadas na malha quadriculada.</strong></p>
-                <img src="https://via.placeholder.com/500x250?text=FIGURAS+PLANAS+MALHA" alt="Figuras Planas na Malha Quadriculada">
-                <div class="sub-question">
-                    <p>A) Se a unidade de área é um quadradinho, qual a área da Figura 1 (retângulo)?</p>
-                    <label for="q3a_fig1">Resposta:</label>
-                    <input type="number" id="q3a_fig1" name="q3a_fig1">
-                    <div id="feedback3a_fig1" class="feedback"></div>
+                <p><strong>3) Desenhe um triângulo retângulo em uma malha quadriculada, com base de 6 unidades e altura de 4 unidades.</strong></p>
+                <div class="drawing-space">
+                    Espaço para desenhar o Triângulo Retângulo na Malha
                 </div>
                 <div class="sub-question">
-                    <p>B) Qual a área da Figura 2 (forma irregular)?</p>
-                    <label for="q3b_fig2">Resposta:</label>
-                    <input type="number" id="q3b_fig2" name="q3b_fig2">
-                    <div id="feedback3b_fig2" class="feedback"></div>
+                    <p>A) Se a unidade de medida de área é um quadradinho (1 cm²), qual a área desse triângulo?</p>
+                    <label for="q3a">Resposta:</label>
+                    <input type="number" id="q3a" name="q3a"> cm²
+                    <div id="feedback3a" class="feedback"></div>
                 </div>
                 <div class="sub-question">
-                    <p>C) Qual o perímetro da Figura 1?</p>
-                    <label for="q3c_fig1">Resposta:</label>
-                    <input type="number" id="q3c_fig1" name="q3c_fig1">
-                    <div id="feedback3c_fig1" class="feedback"></div>
+                    <p>B) Se a área de um quadrado fosse 25 cm², qual seria a medida do lado desse quadrado?</p>
+                    <label for="q3b">Resposta:</label>
+                    <input type="number" id="q3b" name="q3b"> cm
+                    <div id="feedback3b" class="feedback"></div>
                 </div>
             </div>
-
+ 
             <div class="question-section">
-                <p><strong>4) Veja a imagem do lápis ao lado da régua.</strong></p>
-                <img src="https://via.placeholder.com/400x150?text=LÁPIS+E+RÉGUA" alt="Lápis ao lado de uma régua">
+                <p><strong>4) Uma corda mede 5 metros e 75 centímetros.</strong></p>
                 <div class="sub-question">
-                    <p>A) Qual o comprimento do lápis em centímetros?</p>
+                    <p>A) Quantos centímetros tem essa corda no total?</p>
+                    <label for="q4a_calc">Cálculo:</label>
+                    <textarea id="q4a_calc" name="q4a_calc" placeholder="Escreva seu cálculo aqui"></textarea>
                     <label for="q4a">Resposta:</label>
                     <input type="number" id="q4a" name="q4a"> cm
                     <div id="feedback4a" class="feedback"></div>
                 </div>
                 <div class="sub-question">
-                    <p>B) Quantos milímetros tem esse lápis?</p>
+                    <p>B) Se eu usar 1 metro e 20 centímetros dessa corda, quantos centímetros ainda sobram?</p>
+                    <label for="q4b_calc">Cálculo:</label>
+                    <textarea id="q4b_calc" name="q4b_calc" placeholder="Escreva seu cálculo aqui"></textarea>
                     <label for="q4b">Resposta:</label>
-                    <input type="number" id="q4b" name="q4b"> mm
+                    <input type="number" id="q4b" name="q4b"> cm
                     <div id="feedback4b" class="feedback"></div>
                 </div>
             </div>
-
+ 
             <div class="question-section">
-                <p><strong>5) Observe as balanças em equilíbrio.</strong></p>
-                <img src="https://via.placeholder.com/600x300?text=BALANÇAS+EM+EQUILÍBRIO" alt="Balanças em equilíbrio">
+                <p><strong>5) Um caminhão transporta pacotes de açúcar. Cada pacote pesa 1 quilograma e 500 gramas.</strong></p>
                 <div class="sub-question">
-                    <p>A) Se uma laranja pesa 100 gramas, quantos gramas pesa o abacaxi?</p>
+                    <p>A) Quantos gramas pesa cada pacote de açúcar?</p>
                     <label for="q5a">Resposta:</label>
                     <input type="number" id="q5a" name="q5a"> g
                     <div id="feedback5a" class="feedback"></div>
                 </div>
                 <div class="sub-question">
-                    <p>B) Quantos quilogramas o abacaxi pesa?</p>
+                    <p>B) Se o caminhão transporta 5 pacotes, quantos gramas de açúcar ele leva no total?</p>
+                    <label for="q5b_calc">Cálculo:</label>
+                    <textarea id="q5b_calc" name="q5b_calc" placeholder="Escreva seu cálculo aqui"></textarea>
                     <label for="q5b">Resposta:</label>
-                    <input type="number" id="q5b" name="q5b"> kg
-                    <div id="feedback5b" class="feedback"></div>
-                </div>
-            </div>
-
-            <div class="question-section">
-                <p><strong>6) Uma família comprou uma garrafa de 2 litros de suco e vai servir em copos de 250 ml.</strong></p>
-                <div class="sub-question">
-                    <p>A) Quantos copos de suco poderão ser servidos com essa garrafa?</p>
-                    <label for="q6a">Resposta:</label>
-                    <input type="number" id="q6a" name="q6a"> copos
-                    <div id="feedback6a" class="feedback"></div>
-                </div>
-                <div class="sub-question">
-                    <p>B) Se eles servirem apenas 5 copos, quantos mililitros de suco ainda sobrarão na garrafa?</p>
-                    <label for="q6b">Resposta:</label>
-                    <input type="number" id="q6b" name="q6b"> ml
-                    <div id="feedback6b" class="feedback"></div>
-                </div>
-            </div>
-
-            <div class="question-section">
-                <p><strong>7) Observe a imagem abaixo.</strong></p>
-                <img src="https://via.placeholder.com/250x200?text=PARALELEPÍPEDO" alt="Figura de um Paralelepípedo">
-                <div class="sub-question">
-                    <p>A) Qual o nome desta figura geométrica espacial?</p>
-                    <label for="q7a">Resposta:</label>
-                    <input type="text" id="q7a" name="q7a">
-                    <div id="feedback7a" class="feedback"></div>
-                </div>
-                <div class="sub-question">
-                    <p>B) Quantas faces esta figura possui?</p>
-                    <label for="q7b">Resposta:</label>
-                    <input type="number" id="q7b" name="q7b">
-                    <div id="feedback7b" class="feedback"></div>
-                </div>
-            </div>
-
-            <div class="question-section">
-                <p><strong>8) Mariana quer montar uma caixa em forma de cubo. Ela tem o molde (planificação) da caixa.</strong></p>
-                <img src="https://via.placeholder.com/300x250?text=PLANIFICAÇÃO+CUBO" alt="Planificação de um Cubo">
-                <div class="sub-question">
-                    <p>A) Qual o nome da figura geométrica espacial que será formada ao montar essa planificação?</p>
-                    <label for="q8a">Resposta:</label>
-                    <input type="text" id="q8a" name="q8a">
-                    <div id="feedback8a" class="feedback"></div>
-                </div>
-                <div class="sub-question">
-                    <p>B) Se cada quadrado da planificação tem 5 cm de lado, qual a área de uma face desse cubo?</p>
-                    <label for="q8b">Resposta:</label>
-                    <input type="number" id="q8b" name="q8b"> cm²
-                    <div id="feedback8b" class="feedback"></div>
-                </div>
-            </div>
-
-            <button type="submit" class="submit-btn">Verificar Respostas</button>
-        </form>
-
-        <div class="footer">
-            <p>Conteúdo baseado no documento "ORIENTADOR DE ESTUDOS DAS PARCIAIS - 4.º ANO - 2.º TRIMESTRE" do Colégio Marista de Brasília e exemplos de provas.</p>
-            <p>Para mais materiais, consulte o site oficial do Colégio Marista de Brasília.</p>
-            <p>Colégio Marista de Brasília - SGAS 609, conjunto A - L2 Sul, (61) 3442-9400</p>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById('mathQuizB2New').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita o recarregamento da página
-
-            // Respostas corretas (Atenção: AJUSTAR CONFORME AS IMAGENS E DADOS QUE VOCÊ USAR!)
-            const answers = {
-                // Questão 1 (Gráfico Esportes) - **AJUSTAR CONFORME SUA IMAGEM!**
-                q1a: "futebol", // Ex: Mais votado
-                q1b: 7, // Ex: 15 (futebol) - 8 (natação) = 7
-                q1c: 45, // Ex: 15+10+8+12 = 45
-
-                // Questão 2 (Área Sala de Aula) - **AJUSTAR CONFORME SUA IMAGEM!**
-                q2a: 28, // Ex: Se a sala for um retângulo 6x5 (30) menos um quadrado 2x1 (2) = 28 ou um L
-                q2b: 100, // 10 * 10 = 100
-
-                // Questão 3 (Área e Perímetro de Figuras Planas) - **AJUSTAR CONFORME SUA IMAGEM!**
-                q3a_fig1: 12, // Ex: Retângulo 4x3 = 12
-                q3b_fig2: 9, // Ex: Forma de T ou L que ocupe 9 quadradinhos
-                q3c_fig1: 14, // Ex: Perímetro do Retângulo 4x3 = 2*(4+3) = 14
-
-                // Questão 4 (Comprimento do Lápis) - **AJUSTAR CONFORME SUA IMAGEM!**
-                q4a: 12, // Ex: Comprimento do lápis em cm
-                q4b: 120, // 12 cm = 120 mm
-
-                // Questão 5 (Massa em Balanças) - **AJUSTAR CONFORME SUA IMAGEM!**
-                q5a: 200, // Ex: Se 1 laranja = 100g e abacaxi = 2 laranjas, então 200g
-                q5b: 0.2, // 200g = 0.2 kg (pode ser 0 ou 200g para 4º ano, dependendo do que o professor espera)
-
-                // Questão 6 (Capacidade)
-                q6a: 8, // 2 L = 2000 ml; 2000 / 250 = 8
-                q6b: 750, // 8 - 5 = 3 copos. 3 * 250 = 750 ml
-
-                // Questão 7 (Reconhecimento e Características de Paralelepípedo) - **AJUSTAR CONFORME SUA IMAGEM!**
-                q7a: "paralelepípedo",
-                q7b: 6,
-
-                // Questão 8 (Planificação de Cubo) - **AJUSTAR CONFORME SUA IMAGEM!**
-                q8a: "cubo",
-                q8b: 25 // 5 * 5 = 25
-            };
-
-            // Loop para verificar as respostas
-            for (const key in answers) {
-                if (answers.hasOwnProperty(key)) {
-                    const inputElement = document.getElementById(key);
-                    const feedbackDiv = document.getElementById(`feedback${key}`);
-
-                    // Ignora elementos de cálculo (opcional) que não têm feedback direto
-                    if (!inputElement || !feedbackDiv) {
-                        continue;
-                    }
-
-                    let userAnswer;
-                    if (inputElement.type === "number") {
-                        userAnswer = inputElement.value === '' ? null : parseFloat(inputElement.value); // Usar parseFloat para 0.2 kg
-                    } else { // type="text"
-                        userAnswer = inputElement.value.trim().toLowerCase();
-                    }
-
-                    const correctAnswer = String(answers[key]).toLowerCase();
-
-                    feedbackDiv.style.display = 'block';
-
-                    if (userAnswer === null || userAnswer === "") {
-                        feedbackDiv.className = 'feedback empty';
-                        feedbackDiv.innerHTML = `<p>Você deixou esta questão em branco. A resposta correta é: ${answers[key]}</p>`;
-                    } else if (userAnswer == correctAnswer) {
-                        feedbackDiv.className = 'feedback correct';
-                        feedbackDiv.innerHTML = '<p>Correto!</p>';
-                    } else {
-                        feedbackDiv.className = 'feedback incorrect';
-                        feedbackDiv.innerHTML = `<p>Incorreto. A resposta correta é: ${answers[key]}</p>`;
-                    }
-                }
-            }
-        });
-    </script>
-</body>
-</html>
