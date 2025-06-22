@@ -47,72 +47,13 @@
         .question p {
             margin: 5px 0;
         }
-        /* Estilo para o espaço de desenho */
+        /* Estilo para o espaço de desenho com fundo quadriculado */
         .drawing-space {
             width: 100%;
             height: 250px; /* Altura generosa para o desenho */
             border: 1px dashed #999;
-            background-color: #f9f9f9;
-            margin: 15px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #777;
-            font-style: italic;
-            text-align: center;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        .question input[type="text"], .question input[type="number"],
-        .question textarea { /* Estilo para textarea (cálculos) */
-            width: calc(100% - 20px);
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .question textarea {
-            min-height: 100px; /* Altura grande para cálculos */
-            resize: vertical; /* Permite redimensionar verticalmente */
-        }
-        .submit-btn {
-            background-color: #28a745;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1em;
-            display: block;
-            margin: 20px auto 0;
-        }
-        .submit-btn:hover {
-            background-color: #218838;
-        }
-        .feedback {
-            margin-top: 15px;
-            padding: 10px;
-            border-radius: 5px;
-            display: none;
-        }
-        .feedback.correct { background-color: #d4edda; color: #155724; border-color: #c3e6cb; }
-        .feedback.incorrect { background-color: #f8d7da; color: #721c24; border-color: #f5c6cb; }
-        .feedback.empty { background-color: #fff3cd; color: #856404; border-color: #ffeeba; }
-        .feedback p { margin: 0; }
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #777;
-        }
-        .sub-question {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-    </style>
-    <script type="text/javascript" id="MathJax-script" async
-src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+            background-color: #fff; /* Fundo branco */
+background-image: url('data:image/svg+xml;utf8,https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </script>
 </head>
 <body>
@@ -136,7 +77,6 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
                 <p><strong>1) Os alunos do 4º ano votaram nos seus esportes favoritos. Com base nos dados abaixo, desenhe um gráfico de barras no espaço indicado e depois responda.</strong></p>
                 <p>Dados: Futebol: 15 votos, Basquete: 10 votos, Natação: 8 votos, Vôlei: 12 votos.</p>
                 <div class="drawing-space">
-                    Espaço para desenhar o Gráfico de Barras: Esportes Favoritos
                 </div>
                 <div class="sub-question">
                     <p>A) Qual o esporte mais votado?</p>
@@ -167,7 +107,6 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
                 <p>Canteiro 1: Desenhe um retângulo de 5 unidades de largura por 4 unidades de altura.</p>
                 <p>Canteiro 2: Desenhe uma forma de 'L' composta por 10 quadradinhos (ex: um quadrado 4x4 com 6 quadradinhos de um canto removidos).</p>
                 <div class="drawing-space">
-                    Espaço para desenhar os Canteiros na Malha Quadriculada
                 </div>
                 <div class="sub-question">
                     <p>A) Se a unidade de medida de área é um quadradinho, qual a área de cada canteiro?</p>
@@ -193,7 +132,6 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
             <div class="question-section">
                 <p><strong>3) Desenhe um triângulo retângulo em uma malha quadriculada, com base de 6 unidades e altura de 4 unidades.</strong></p>
                 <div class="drawing-space">
-                    Espaço para desenhar o Triângulo Retângulo na Malha
                 </div>
                 <div class="sub-question">
                     <p>A) Se a unidade de medida de área é um quadradinho (1 cm²), qual a área desse triângulo?</p>
@@ -242,3 +180,6 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
                     <label for="q5b_calc">Cálculo:</label>
                     <textarea id="q5b_calc" name="q5b_calc" placeholder="Escreva seu cálculo aqui"></textarea>
                     <label for="q5b">Resposta:</label>
+                    <input type="number" id="q5b" name="q5b"> g
+                    <div id="feedback5b" class="feedback"></div>
+                </di
